@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bdgpncc1m68w3" path="res://Scenes/platform_media.tscn" id="10_8wk15"]
 [ext_resource type="PackedScene" uid="uid://xoehnqgg1hql" path="res://Scenes/hueso.tscn" id="15_xx40l"]
 [ext_resource type="PackedScene" uid="uid://dhk2emihqbksm" path="res://Scenes/Enemy.tscn" id="16_utdxf"]
-[ext_resource type="Script" uid="uid://c0cg0b2gycsv8" path="res://Scenes/level_finish.gd" id="17_8wk15"]
+[ext_resource type="Script" path="res://Scenes/level_finish.gd" id="17_8wk15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgqvi"]
 size = Vector2(149, 429)
@@ -25,7 +25,7 @@ size = Vector2(149, 429)
 [node name="Level2" type="Node2D"]
 
 [node name="Fondo" parent="." instance=ExtResource("1_xx40l")]
-position = Vector2(375, 43)
+position = Vector2(161, 36)
 
 [node name="puerta" parent="." instance=ExtResource("2_utdxf")]
 position = Vector2(16025, 98)

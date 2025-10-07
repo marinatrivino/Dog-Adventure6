@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbny3q11cpmub"]
+
+[ext_resource type="Texture2D" uid="uid://b46r8onwl3c5k" path="res://Assets/parte del medio.png" id="1_mi635"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
+size = Vector2(456, 251)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c1gtx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mi635")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="platform" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(213, 96.5)
+shape = SubResource("RectangleShape2D_s8bxr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(214, 95.75)
+scale = Vector2(1.75385, 4.07377)
+sprite_frames = SubResource("SpriteFrames_c1gtx")

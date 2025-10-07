@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx82emru2327h"]
+
+[ext_resource type="Texture2D" uid="uid://bs5k0oxbg25aj" path="res://Assets/pared.png" id="1_xxgf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4f30"]
+size = Vector2(519, 794)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuee5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xxgf6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(271.5, 202)
+shape = SubResource("RectangleShape2D_y4f30")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(270.5, 202.5)
+scale = Vector2(1.23571, 1.19428)
+sprite_frames = SubResource("SpriteFrames_iuee5")

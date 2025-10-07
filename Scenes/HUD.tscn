@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://denqojuvjt70k"]
+
+[ext_resource type="Script" uid="uid://plxmd085ev4s" path="res://Scripts/hud.gd" id="1_k5de2"]
+[ext_resource type="Texture2D" uid="uid://dd3scyoy61v5u" path="res://Assets/corazon lleno.png" id="2_jo1ms"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_k5de2")
+
+[node name="BonesLabel" type="Label" parent="."]
+offset_left = 267.0
+offset_top = 51.0
+offset_right = 324.0
+offset_bottom = 74.0
+text = "Huesos"
+
+[node name="LivesContainer" type="HBoxContainer" parent="."]
+offset_left = 38.0
+offset_top = 47.0
+offset_right = 535.0
+offset_bottom = 247.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Heart1" type="TextureRect" parent="LivesContainer"]
+layout_mode = 2
+texture = ExtResource("2_jo1ms")
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="LivesContainer"]
+layout_mode = 2
+texture = ExtResource("2_jo1ms")
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="LivesContainer"]
+layout_mode = 2
+texture = ExtResource("2_jo1ms")
+stretch_mode = 5

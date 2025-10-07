@@ -1,0 +1,341 @@
+[gd_scene load_steps=26 format=3 uid="uid://c3xss1uis53js"]
+
+[ext_resource type="Texture2D" uid="uid://r7uem5h3qkdx" path="res://Assets/step.png" id="1_ug0sv"]
+[ext_resource type="PackedScene" uid="uid://c7pv13sk6mrp7" path="res://Scenes/Player.tscn" id="2_0wsr5"]
+[ext_resource type="PackedScene" uid="uid://h8y1svru7xq8" path="res://Scenes/floor.tscn" id="3_jgorv"]
+[ext_resource type="PackedScene" uid="uid://crya0wdu088mk" path="res://Scenes/step.tscn" id="4_q1ws5"]
+[ext_resource type="PackedScene" uid="uid://cbny3q11cpmub" path="res://Scenes/platform.tscn" id="5_yji5v"]
+[ext_resource type="PackedScene" uid="uid://byhr4rl738ra7" path="res://Scenes/step_mas_grande.tscn" id="6_ulvkb"]
+[ext_resource type="PackedScene" uid="uid://nou7hcxyfdqf" path="res://Scenes/floor_mediano.tscn" id="7_fh0sh"]
+[ext_resource type="PackedScene" uid="uid://doh1052hwmlfi" path="res://Scenes/floor_chico.tscn" id="8_03od6"]
+[ext_resource type="PackedScene" uid="uid://eos000wk5eet" path="res://Scenes/floor_pequeño.tscn" id="9_384de"]
+[ext_resource type="PackedScene" uid="uid://dhk2emihqbksm" path="res://Scenes/Enemy.tscn" id="10_bhaf5"]
+[ext_resource type="PackedScene" uid="uid://xoehnqgg1hql" path="res://Scenes/hueso.tscn" id="11_o0dvq"]
+[ext_resource type="PackedScene" uid="uid://x2ba0chgykd6" path="res://Scenes/parte_de_abajo.tscn" id="12_1nrjw"]
+[ext_resource type="PackedScene" uid="uid://bpmj1jri1bmbh" path="res://Scenes/parte_del_medio.tscn" id="13_bqkvc"]
+[ext_resource type="PackedScene" uid="uid://c04f0mpkpoaye" path="res://Scenes/parte_de_arriba.tscn" id="14_iswit"]
+[ext_resource type="PackedScene" uid="uid://8stons7vwfer" path="res://Scenes/parte_entre_medio.tscn" id="15_ud1sj"]
+[ext_resource type="PackedScene" uid="uid://dx82emru2327h" path="res://Scenes/wall.tscn" id="16_qvja8"]
+[ext_resource type="Texture2D" uid="uid://cd40bc3ckb4cv" path="res://Assets/FONDO DEL JUEGO.png" id="17_0wsr5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_0wsr5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_jgorv"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_q1ws5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_yji5v"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ulvkb"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_fh0sh"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_03od6"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_384de"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7682, 587)
+scale = Vector2(380.654, 846)
+texture = ExtResource("1_ug0sv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = -72.0
+offset_right = 1714.0
+offset_bottom = 1013.0
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDelJuego" type="Sprite2D" parent="TextureRect"]
+position = Vector2(2424, 504)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDelJuego2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(3944, 448)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego3" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_0wsr5")
+
+[node name="FondoDelJuego11" type="Sprite2D" parent="TextureRect"]
+position = Vector2(5453, 435)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego4" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_jgorv")
+
+[node name="FondoDelJuego4" type="Sprite2D" parent="TextureRect"]
+position = Vector2(6944, 407)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego5" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_q1ws5")
+
+[node name="FondoDelJuego5" type="Sprite2D" parent="TextureRect"]
+position = Vector2(8462, 422)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego6" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_yji5v")
+
+[node name="FondoDelJuego6" type="Sprite2D" parent="TextureRect"]
+position = Vector2(9962, 416)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego7" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_ulvkb")
+
+[node name="FondoDelJuego7" type="Sprite2D" parent="TextureRect"]
+position = Vector2(11467, 426)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego8" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_fh0sh")
+
+[node name="FondoDelJuego12" type="Sprite2D" parent="TextureRect"]
+position = Vector2(12984, 373)
+texture = ExtResource("17_0wsr5")
+
+[node name="FondoDeljuego12" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_03od6")
+
+[node name="FondoDelJuego13" type="Sprite2D" parent="TextureRect"]
+position = Vector2(14522, 379)
+texture = ExtResource("17_0wsr5")
+
+[node name="Fondodeljuego14" type="Sprite2D" parent="TextureRect"]
+texture = SubResource("ImageTexture_384de")
+
+[node name="FondoDelJuego15" type="Sprite2D" parent="TextureRect"]
+position = Vector2(15871, 389)
+texture = ExtResource("17_0wsr5")
+
+[node name="Player" parent="." instance=ExtResource("2_0wsr5")]
+position = Vector2(57, 498)
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2(2, 1)
+
+[node name="StaticBody2D" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(-23, 514)
+
+[node name="StaticBody2D2" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(-23, 514)
+
+[node name="Floor" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(914, 508)
+
+[node name="Floor2" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(1700, 508)
+
+[node name="Step" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(2444, 428)
+
+[node name="Step2" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(2576, 359)
+
+[node name="Step3" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(2702, 290)
+
+[node name="Floor3" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(3073, 512)
+
+[node name="Floor4" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(4058, 508)
+
+[node name="platform" parent="Floor" instance=ExtResource("5_yji5v")]
+position = Vector2(5082, 560)
+
+[node name="platform2" parent="Floor" instance=ExtResource("5_yji5v")]
+position = Vector2(5699, 836)
+
+[node name="Step4" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(6171, 745)
+
+[node name="Step5" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(6376, 673)
+
+[node name="Step6" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(6559, 593)
+
+[node name="StepMasGrande" parent="Floor" instance=ExtResource("6_ulvkb")]
+position = Vector2(6730, 521)
+
+[node name="StepMasGrande2" parent="Floor" instance=ExtResource("6_ulvkb")]
+position = Vector2(7370, 586)
+
+[node name="Step7" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(7975, 525)
+
+[node name="Step8" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8120, 604)
+
+[node name="Step9" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8240, 674)
+
+[node name="Step10" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8386, 737)
+
+[node name="Step11" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8546, 678)
+
+[node name="Step12" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8703, 613)
+
+[node name="Step13" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8862, 544)
+
+[node name="Step14" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(8989, 475)
+
+[node name="Step15" parent="Floor" instance=ExtResource("4_q1ws5")]
+position = Vector2(9117, 407)
+
+[node name="Floor5" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(9364, 582)
+
+[node name="Floor6" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(10134, 582)
+
+[node name="Floor7" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(10898, 582)
+
+[node name="Floor8" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(11656, 582)
+
+[node name="Floor9" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(12418, 582)
+
+[node name="Floor10" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(13203, 583)
+
+[node name="FloorMediano" parent="Floor" instance=ExtResource("7_fh0sh")]
+position = Vector2(13355, 374)
+
+[node name="floor_chico" parent="Floor" instance=ExtResource("8_03od6")]
+position = Vector2(13279, 430)
+
+[node name="floorPequeño" parent="Floor" instance=ExtResource("9_384de")]
+position = Vector2(13380, 363)
+
+[node name="Floor11" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(13988, 581)
+
+[node name="Floor12" parent="Floor" instance=ExtResource("3_jgorv")]
+position = Vector2(14769, 582)
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Node2D" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(1319, 502)
+
+[node name="Node2D2" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(2120, 502)
+
+[node name="enemy" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(3367, 507)
+
+[node name="enemy2" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(7124, 519)
+
+[node name="enemy3" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(9704, 576)
+
+[node name="enemy4" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(10355, 577)
+
+[node name="enemy5" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(11024, 577)
+
+[node name="enemy6" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(11669, 577)
+
+[node name="enemy7" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(12319, 576)
+
+[node name="enemy8" parent="Enemy" instance=ExtResource("10_bhaf5")]
+position = Vector2(13738, 346)
+
+[node name="bone" type="Node2D" parent="."]
+
+[node name="Area2D" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(1156, 378)
+
+[node name="hueso" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(1376, 374)
+
+[node name="hueso2" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(1592, 372)
+
+[node name="hueso3" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(1795, 370)
+
+[node name="hueso4" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(2013, 370)
+
+[node name="hueso5" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(2275, 368)
+
+[node name="hueso6" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(5302, 445)
+
+[node name="hueso7" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(7132, 358)
+
+[node name="hueso8" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(7781, 439)
+
+[node name="hueso9" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(9156, 294)
+
+[node name="hueso10" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(10029, 555)
+
+[node name="hueso11" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(10686, 551)
+
+[node name="hueso12" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(11337, 551)
+
+[node name="hueso13" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(11973, 549)
+
+[node name="hueso14" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(12626, 548)
+
+[node name="hueso15" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(13732, 207)
+
+[node name="hueso16" parent="bone" instance=ExtResource("11_o0dvq")]
+position = Vector2(3979, 148)
+
+[node name="Escalera" type="Node2D" parent="."]
+
+[node name="parte de abajo" parent="Escalera" instance=ExtResource("12_1nrjw")]
+position = Vector2(3495, 373)
+
+[node name="parte del medio" parent="Escalera" instance=ExtResource("13_bqkvc")]
+position = Vector2(3489, 374)
+
+[node name="parte de arriba" parent="Escalera" instance=ExtResource("14_iswit")]
+position = Vector2(3515, 206)
+
+[node name="parte entre medio" parent="Escalera" instance=ExtResource("15_ud1sj")]
+position = Vector2(3582, 273)
+
+[node name="parte de abajo2" parent="Escalera" instance=ExtResource("12_1nrjw")]
+position = Vector2(4098, 374)
+
+[node name="parte del medio2" parent="Escalera" instance=ExtResource("13_bqkvc")]
+position = Vector2(3989, 374)
+
+[node name="parte entre medio2" parent="Escalera" instance=ExtResource("15_ud1sj")]
+position = Vector2(3998, 267)
+
+[node name="parte de arriba2" parent="Escalera" instance=ExtResource("14_iswit")]
+position = Vector2(3852, 196)
+
+[node name="Wall2" parent="." instance=ExtResource("16_qvja8")]
+position = Vector2(-523, 194)

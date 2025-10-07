@@ -1,0 +1,172 @@
+[gd_scene load_steps=16 format=3 uid="uid://cptafvgh8e7gg"]
+
+[ext_resource type="Texture2D" uid="uid://r7uem5h3qkdx" path="res://Assets/step.png" id="1_ejprb"]
+[ext_resource type="PackedScene" uid="uid://c7pv13sk6mrp7" path="res://Scenes/Player.tscn" id="2_au75x"]
+[ext_resource type="PackedScene" uid="uid://h8y1svru7xq8" path="res://Scenes/floor.tscn" id="3_62f1r"]
+[ext_resource type="PackedScene" uid="uid://did30tquqh6ek" path="res://Scenes/rectangulo_alto.tscn" id="4_1je60"]
+[ext_resource type="PackedScene" uid="uid://drjhg8dca547q" path="res://Scenes/rectangulo_medio.tscn" id="5_62f1r"]
+[ext_resource type="PackedScene" uid="uid://dx82emru2327h" path="res://Scenes/wall.tscn" id="5_ycmr1"]
+[ext_resource type="PackedScene" uid="uid://cp6v4ovdo8ofk" path="res://Scenes/rectangulo_bajo.tscn" id="6_1je60"]
+[ext_resource type="PackedScene" uid="uid://x2ba0chgykd6" path="res://Scenes/parte_de_abajo.tscn" id="6_2jwna"]
+[ext_resource type="PackedScene" uid="uid://bpmj1jri1bmbh" path="res://Scenes/parte_del_medio.tscn" id="7_sgc6j"]
+[ext_resource type="PackedScene" uid="uid://nou7hcxyfdqf" path="res://Scenes/floor_mediano.tscn" id="7_ycmr1"]
+[ext_resource type="PackedScene" uid="uid://crya0wdu088mk" path="res://Scenes/step.tscn" id="8_2jwna"]
+[ext_resource type="PackedScene" uid="uid://c04f0mpkpoaye" path="res://Scenes/parte_de_arriba.tscn" id="8_xx40l"]
+[ext_resource type="PackedScene" uid="uid://byhr4rl738ra7" path="res://Scenes/step_mas_grande.tscn" id="9_2jwna"]
+[ext_resource type="PackedScene" uid="uid://8stons7vwfer" path="res://Scenes/parte_entre_medio.tscn" id="9_utdxf"]
+[ext_resource type="PackedScene" uid="uid://bdgpncc1m68w3" path="res://Scenes/platform_media.tscn" id="10_8wk15"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8619.87, 812)
+scale = Vector2(399.676, 886.5)
+texture = ExtResource("1_ejprb")
+
+[node name="Player" parent="." instance=ExtResource("2_au75x")]
+position = Vector2(124, 510)
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="Floor" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(-156, 518)
+
+[node name="Floor2" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(801, 517)
+
+[node name="Floor3" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(1472, 517)
+
+[node name="Floor4" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(2434, 517)
+
+[node name="Floor5" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(3756, 516)
+
+[node name="Rectangulo alto" parent="Floor" instance=ExtResource("4_1je60")]
+position = Vector2(4536, 285)
+
+[node name="StaticBody2D" parent="Floor" instance=ExtResource("5_62f1r")]
+position = Vector2(4869, 372)
+
+[node name="Rectangulo bajo" parent="Floor" instance=ExtResource("6_1je60")]
+position = Vector2(5185, 455)
+
+[node name="FloorMediano" parent="Floor" instance=ExtResource("7_ycmr1")]
+position = Vector2(5819, 537)
+
+[node name="Step" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(6671, 794)
+
+[node name="Step2" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(6888, 871)
+
+[node name="Step3" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(7102, 873)
+
+[node name="Step4" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(7302, 801)
+
+[node name="Step5" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(7511, 727)
+
+[node name="FloorMediano3" parent="Floor" instance=ExtResource("7_ycmr1")]
+position = Vector2(7986, 538)
+
+[node name="FloorMediano2" parent="Floor" instance=ExtResource("7_ycmr1")]
+position = Vector2(9135, 490)
+
+[node name="Floor6" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(10115, 549)
+
+[node name="Floor7" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(11039, 502)
+
+[node name="Floor8" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(11981, 502)
+
+[node name="Floor9" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(12924, 504)
+
+[node name="Step6" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(13716, 416)
+
+[node name="Step7" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(13894, 334)
+
+[node name="Step8" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14704, 187)
+
+[node name="Step9" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14561, 199)
+
+[node name="Step10" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14658, 202)
+
+[node name="Step11" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14715, 234)
+
+[node name="Step12" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14785, 199)
+
+[node name="Step13" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14750, 222)
+
+[node name="Step14" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14809, 155)
+
+[node name="Step15" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14663, 163)
+
+[node name="Step16" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14786, 250)
+
+[node name="Step17" parent="Floor" instance=ExtResource("8_2jwna")]
+position = Vector2(14663, 232)
+
+[node name="StepMasGrande" parent="Floor" instance=ExtResource("9_2jwna")]
+position = Vector2(14389, 245)
+
+[node name="Wall" parent="." instance=ExtResource("5_ycmr1")]
+position = Vector2(-521, 188)
+
+[node name="Escalera" type="Node2D" parent="."]
+
+[node name="parte de abajo" parent="Escalera" instance=ExtResource("6_2jwna")]
+position = Vector2(1892, 379)
+
+[node name="parte del medio" parent="Escalera" instance=ExtResource("7_sgc6j")]
+position = Vector2(1885, 378)
+
+[node name="parte de arriba" parent="Escalera" instance=ExtResource("8_xx40l")]
+position = Vector2(1912, 198)
+
+[node name="parte entre medio" parent="Escalera" instance=ExtResource("9_utdxf")]
+position = Vector2(1979, 269)
+
+[node name="parte de abajo2" parent="Escalera" instance=ExtResource("6_2jwna")]
+position = Vector2(2472, 377)
+
+[node name="parte del medio2" parent="Escalera" instance=ExtResource("7_sgc6j")]
+position = Vector2(2362, 377)
+
+[node name="parte entre medio2" parent="Escalera" instance=ExtResource("9_utdxf")]
+position = Vector2(2371, 270)
+
+[node name="parte de arriba2" parent="Escalera" instance=ExtResource("8_xx40l")]
+position = Vector2(2225, 199)
+
+[node name="parte de abajo3" parent="Escalera" instance=ExtResource("6_2jwna")]
+position = Vector2(4176, 378)
+
+[node name="parte del medio3" parent="Escalera" instance=ExtResource("7_sgc6j")]
+position = Vector2(4169, 377)
+
+[node name="parte entre medio3" parent="Escalera" instance=ExtResource("9_utdxf")]
+position = Vector2(4262, 270)
+
+[node name="parte de arriba3" parent="Escalera" instance=ExtResource("8_xx40l")]
+position = Vector2(4196, 201)
+
+[node name="platformMedia" parent="." instance=ExtResource("10_8wk15")]
+position = Vector2(3433, 548)

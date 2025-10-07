@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdgpncc1m68w3"]
+
+[ext_resource type="Texture2D" uid="uid://d0igyj2qy4l2n" path="res://Assets/plataforma.png" id="1_ocxga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j188"]
+size = Vector2(192, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqeo6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ocxga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="platformMedia" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(86, 108)
+shape = SubResource("RectangleShape2D_1j188")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(86, 108.5)
+scale = Vector2(0.255348, 1.7029)
+sprite_frames = SubResource("SpriteFrames_xqeo6")

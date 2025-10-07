@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://doh1052hwmlfi"]
+
+[ext_resource type="Texture2D" uid="uid://b072wpl8vvdwt" path="res://Assets/parte de abajo.png" id="1_4v4c2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2642"]
+size = Vector2(792, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajf33"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4v4c2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="floor_chico" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(456, 60.5)
+shape = SubResource("RectangleShape2D_k2642")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(455.5, 60.75)
+scale = Vector2(1.96287, 1.22131)
+sprite_frames = SubResource("SpriteFrames_ajf33")

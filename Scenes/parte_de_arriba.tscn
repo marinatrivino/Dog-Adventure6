@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c04f0mpkpoaye"]
+
+[ext_resource type="Texture2D" uid="uid://c7vparvabtxg4" path="res://Assets/parte de arriba.png" id="1_h52ys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nomo"]
+size = Vector2(139, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnlvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h52ys")
+}],
+"loop": true,
+"name": &"parte de arriba",
+"speed": 5.0
+}]
+
+[node name="parte de arriba" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(304.5, 123)
+shape = SubResource("RectangleShape2D_8nomo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(305, 124)
+scale = Vector2(1.04545, 1)
+sprite_frames = SubResource("SpriteFrames_lnlvj")
+animation = &"parte de arriba"

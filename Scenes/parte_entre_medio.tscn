@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://8stons7vwfer"]
+
+[ext_resource type="Texture2D" uid="uid://crca0ctfwimul" path="res://Assets/parte entre medio.png" id="1_xd57n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmgpm"]
+size = Vector2(214, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsspu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xd57n")
+}],
+"loop": true,
+"name": &"parte entre medio",
+"speed": 5.0
+}]
+
+[node name="parte entre medio" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(196, 117)
+shape = SubResource("RectangleShape2D_gmgpm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(198.5, 116.75)
+scale = Vector2(1.10714, 1.09016)
+sprite_frames = SubResource("SpriteFrames_jsspu")
+animation = &"parte entre medio"

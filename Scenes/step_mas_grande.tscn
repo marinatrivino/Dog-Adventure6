@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://byhr4rl738ra7"]
+
+[ext_resource type="Texture2D" uid="uid://d0igyj2qy4l2n" path="res://Assets/plataforma.png" id="1_o1r00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1r00"]
+size = Vector2(542, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aqagp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o1r00")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="StepMasGrande" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(401.25, 27.25)
+shape = SubResource("RectangleShape2D_o1r00")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(401.75, 27.25)
+scale = Vector2(0.725936, 0.0144928)
+sprite_frames = SubResource("SpriteFrames_aqagp")
+animation = &"new_animation"

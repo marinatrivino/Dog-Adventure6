@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://csrf04pvfdwjf"]
+
+[ext_resource type="Script" uid="uid://b7eswc4taogei" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://d3ukochth554j" path="res://Assets/Menu principal.png" id="2_48xlc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ehe0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_48xlc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+script = ExtResource("1_28flt")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = -427.0
+offset_top = 300.0
+offset_right = -306.0
+offset_bottom = 328.0
+text = "Dog Adventure"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 373.0
+offset_right = 351.0
+offset_bottom = 450.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(573, 322)
+scale = Vector2(0.75, 0.631836)
+sprite_frames = SubResource("SpriteFrames_1ehe0")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]

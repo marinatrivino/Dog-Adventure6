@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpmj1jri1bmbh"]
+
+[ext_resource type="Texture2D" uid="uid://b46r8onwl3c5k" path="res://Assets/parte del medio.png" id="1_dw3rf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gn7f"]
+size = Vector2(301, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2x8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dw3rf")
+}],
+"loop": true,
+"name": &"parte del medio",
+"speed": 5.0
+}]
+
+[node name="parte del medio" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(248.5, 72)
+shape = SubResource("RectangleShape2D_3gn7f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(250, 72)
+scale = Vector2(1.16154, 1)
+sprite_frames = SubResource("SpriteFrames_q2x8d")
+animation = &"parte del medio"

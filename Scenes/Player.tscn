@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7pv13sk6mrp7"]
+
+[ext_resource type="Script" uid="uid://c24tsb3vbjtsg" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://bc7v8r1q2ea2p" path="res://Assets/PERRO DEFINITIVO.png" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://bo071x6sx45xb" path="res://Assets/PERRO SALTANDO RECORTADO.png" id="3_dewec"]
+[ext_resource type="Texture2D" uid="uid://ditwm1ud48ls1" path="res://Assets/PERRO INTENTANDO CAMINAR RECORTADO.png" id="4_5ixxa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xhfnw")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xhfnw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dewec")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5ixxa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_kpjcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, -16)
+rotation = -0.00623672
+scale = Vector2(0.108968, 0.110352)
+sprite_frames = SubResource("SpriteFrames_kpjcp")
+animation = &"walk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-2.86102e-06, 0)
+polygon = PackedVector2Array(-12, -11, 1, -4, 8, -2, 9, 7, 10, 17, 12, 25, 14, 27, 17, 27, 21, 27, 23, 26, 24, 23, 24, 23, 25, 26, 31, 24, 36, 24, 42, 24, 43, 22, 42, 19, 38, 18, 36, 16, 35, 12, 35, 0, 38, -11, 39, -16, 41, -18, 43, -22, 47, -25, 50, -29, 53, -32, 54, -34, 56, -36, 57, -42, 50, -47, 50, -55, 52, -55, 54, -59, 52, -66, 41, -68, 41, -69, 37, -65, 29, -65, 27, -68, 12, -65, 12, -63, 13, -59, 17, -55, 16, -46, 10, -35, -12, -33, -26, -33, -30, -34, -34, -37, -36, -41, -37, -45, -37, -49, -36, -53, -35, -57, -38, -58, -41, -55, -44, -53, -46, -46, -44, -41, -42, -37, -37, -32, -33, -30, -36, -24, -38, -11, -38, -4, -42, 2, -43, 8, -44, 18, -43, 21, -41, 22, -34, 22, -32, 21, -34, 18, -37, 16, -22, 15, -22, 18, -18, 19, -14, 19, -13, 18, -13, 16, -16, 14, -19, 11, -20, 5, -16, 1, -12, -4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8.99971, -58.0001)

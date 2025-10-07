@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cptafvgh8e7gg"]
+[gd_scene load_steps=20 format=3 uid="uid://cptafvgh8e7gg"]
 
-[ext_resource type="Texture2D" uid="uid://r7uem5h3qkdx" path="res://Assets/step.png" id="1_ejprb"]
+[ext_resource type="PackedScene" uid="uid://dybp5hq1qkshd" path="res://Scenes/fondo.tscn" id="1_xx40l"]
 [ext_resource type="PackedScene" uid="uid://c7pv13sk6mrp7" path="res://Scenes/Player.tscn" id="2_au75x"]
+[ext_resource type="PackedScene" uid="uid://br161s54a1xg1" path="res://Scenes/puerta.tscn" id="2_utdxf"]
 [ext_resource type="PackedScene" uid="uid://h8y1svru7xq8" path="res://Scenes/floor.tscn" id="3_62f1r"]
 [ext_resource type="PackedScene" uid="uid://did30tquqh6ek" path="res://Scenes/rectangulo_alto.tscn" id="4_1je60"]
 [ext_resource type="PackedScene" uid="uid://drjhg8dca547q" path="res://Scenes/rectangulo_medio.tscn" id="5_62f1r"]
@@ -12,19 +13,25 @@
 [ext_resource type="PackedScene" uid="uid://nou7hcxyfdqf" path="res://Scenes/floor_mediano.tscn" id="7_ycmr1"]
 [ext_resource type="PackedScene" uid="uid://crya0wdu088mk" path="res://Scenes/step.tscn" id="8_2jwna"]
 [ext_resource type="PackedScene" uid="uid://c04f0mpkpoaye" path="res://Scenes/parte_de_arriba.tscn" id="8_xx40l"]
-[ext_resource type="PackedScene" uid="uid://byhr4rl738ra7" path="res://Scenes/step_mas_grande.tscn" id="9_2jwna"]
 [ext_resource type="PackedScene" uid="uid://8stons7vwfer" path="res://Scenes/parte_entre_medio.tscn" id="9_utdxf"]
 [ext_resource type="PackedScene" uid="uid://bdgpncc1m68w3" path="res://Scenes/platform_media.tscn" id="10_8wk15"]
+[ext_resource type="PackedScene" uid="uid://xoehnqgg1hql" path="res://Scenes/hueso.tscn" id="15_xx40l"]
+[ext_resource type="PackedScene" uid="uid://dhk2emihqbksm" path="res://Scenes/Enemy.tscn" id="16_utdxf"]
+[ext_resource type="Script" uid="uid://c0cg0b2gycsv8" path="res://Scenes/level_finish.gd" id="17_8wk15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgqvi"]
+size = Vector2(149, 429)
 
 [node name="Level2" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8619.87, 812)
-scale = Vector2(399.676, 886.5)
-texture = ExtResource("1_ejprb")
+[node name="Fondo" parent="." instance=ExtResource("1_xx40l")]
+position = Vector2(375, 43)
+
+[node name="puerta" parent="." instance=ExtResource("2_utdxf")]
+position = Vector2(16025, 98)
 
 [node name="Player" parent="." instance=ExtResource("2_au75x")]
-position = Vector2(124, 510)
+position = Vector2(132, 530)
 
 [node name="Floor" type="Node2D" parent="."]
 
@@ -95,37 +102,37 @@ position = Vector2(13716, 416)
 position = Vector2(13894, 334)
 
 [node name="Step8" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14704, 187)
+position = Vector2(13716, 224)
 
 [node name="Step9" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14561, 199)
+position = Vector2(13897, 132)
 
 [node name="Step10" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14658, 202)
+position = Vector2(13721, 38)
 
 [node name="Step11" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14715, 234)
+position = Vector2(13902, -57)
 
 [node name="Step12" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14785, 199)
+position = Vector2(14127, -19)
 
 [node name="Step13" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14750, 222)
+position = Vector2(14311, 77)
 
 [node name="Step14" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14809, 155)
+position = Vector2(14506, 187)
 
 [node name="Step15" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14663, 163)
+position = Vector2(14692, 284)
 
-[node name="Step16" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14786, 250)
+[node name="platformMedia" parent="Floor" instance=ExtResource("10_8wk15")]
+position = Vector2(3433, 548)
 
-[node name="Step17" parent="Floor" instance=ExtResource("8_2jwna")]
-position = Vector2(14663, 232)
+[node name="Floor10" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(14917, 348)
 
-[node name="StepMasGrande" parent="Floor" instance=ExtResource("9_2jwna")]
-position = Vector2(14389, 245)
+[node name="Floor11" parent="Floor" instance=ExtResource("3_62f1r")]
+position = Vector2(15699, 348)
 
 [node name="Wall" parent="." instance=ExtResource("5_ycmr1")]
 position = Vector2(-521, 188)
@@ -133,40 +140,135 @@ position = Vector2(-521, 188)
 [node name="Escalera" type="Node2D" parent="."]
 
 [node name="parte de abajo" parent="Escalera" instance=ExtResource("6_2jwna")]
-position = Vector2(1892, 379)
+position = Vector2(1888, 374)
 
 [node name="parte del medio" parent="Escalera" instance=ExtResource("7_sgc6j")]
-position = Vector2(1885, 378)
-
-[node name="parte de arriba" parent="Escalera" instance=ExtResource("8_xx40l")]
-position = Vector2(1912, 198)
+position = Vector2(1888, 375)
 
 [node name="parte entre medio" parent="Escalera" instance=ExtResource("9_utdxf")]
-position = Vector2(1979, 269)
+position = Vector2(1983, 280)
+
+[node name="parte de arriba" parent="Escalera" instance=ExtResource("8_xx40l")]
+position = Vector2(1919, 201)
 
 [node name="parte de abajo2" parent="Escalera" instance=ExtResource("6_2jwna")]
-position = Vector2(2472, 377)
+position = Vector2(2465, 373)
 
 [node name="parte del medio2" parent="Escalera" instance=ExtResource("7_sgc6j")]
-position = Vector2(2362, 377)
+position = Vector2(2369, 373)
 
 [node name="parte entre medio2" parent="Escalera" instance=ExtResource("9_utdxf")]
-position = Vector2(2371, 270)
+position = Vector2(2385, 278)
 
 [node name="parte de arriba2" parent="Escalera" instance=ExtResource("8_xx40l")]
 position = Vector2(2225, 199)
 
 [node name="parte de abajo3" parent="Escalera" instance=ExtResource("6_2jwna")]
-position = Vector2(4176, 378)
+position = Vector2(4172, 373)
 
 [node name="parte del medio3" parent="Escalera" instance=ExtResource("7_sgc6j")]
-position = Vector2(4169, 377)
+position = Vector2(4173, 374)
 
 [node name="parte entre medio3" parent="Escalera" instance=ExtResource("9_utdxf")]
-position = Vector2(4262, 270)
+position = Vector2(4268, 279)
 
 [node name="parte de arriba3" parent="Escalera" instance=ExtResource("8_xx40l")]
-position = Vector2(4196, 201)
+position = Vector2(4204, 199)
 
-[node name="platformMedia" parent="." instance=ExtResource("10_8wk15")]
-position = Vector2(3433, 548)
+[node name="Bone" type="Node2D" parent="."]
+
+[node name="hueso" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(1349, 442)
+
+[node name="hueso2" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(2370, 185)
+
+[node name="hueso3" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(3310, 420)
+
+[node name="hueso4" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(3972, 438)
+
+[node name="hueso5" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(4648, 181)
+
+[node name="hueso6" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(5141, 297)
+
+[node name="hueso7" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(5453, 448)
+
+[node name="hueso8" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(6190, 581)
+
+[node name="hueso9" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(7269, 789)
+
+[node name="hueso10" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(7673, 633)
+
+[node name="hueso11" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(8340, 540)
+
+[node name="hueso12" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(9521, 484)
+
+[node name="hueso13" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(10526, 416)
+
+[node name="hueso14" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(11462, 365)
+
+[node name="hueso15" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(12403, 370)
+
+[node name="hueso16" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(13341, 378)
+
+[node name="hueso17" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(13878, 155)
+
+[node name="hueso18" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(14474, 5)
+
+[node name="hueso19" parent="Bone" instance=ExtResource("15_xx40l")]
+position = Vector2(15371, 240)
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="enemy" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(1352, 521)
+
+[node name="enemy2" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(6187, 665)
+
+[node name="enemy3" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(8340, 671)
+
+[node name="enemy4" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(9515, 618)
+
+[node name="enemy5" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(10522, 550)
+
+[node name="enemy6" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(11461, 502)
+
+[node name="enemy7" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(12402, 503)
+
+[node name="enemy8" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(13345, 507)
+
+[node name="enemy9" parent="Enemy" instance=ExtResource("16_utdxf")]
+position = Vector2(15249, 350)
+
+[node name="LevelFinish" type="Area2D" parent="."]
+position = Vector2(16226, 247)
+script = ExtResource("17_8wk15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFinish"]
+position = Vector2(13, -82.5)
+shape = SubResource("RectangleShape2D_bgqvi")
+
+[connection signal="body_entered" from="LevelFinish" to="LevelFinish" method="_on_body_entered"]

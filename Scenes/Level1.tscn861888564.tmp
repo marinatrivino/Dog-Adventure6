@@ -1,0 +1,209 @@
+[gd_scene load_steps=22 format=4 uid="uid://c3xss1uis53js"]
+
+[ext_resource type="Texture2D" uid="uid://dn7fw7qaiefgt" path="res://Assets/FONDO DEL JUEGO CIELITO.jpg" id="1_ug0sv"]
+[ext_resource type="PackedScene" uid="uid://c7pv13sk6mrp7" path="res://Scenes/Player.tscn" id="2_0wsr5"]
+[ext_resource type="PackedScene" uid="uid://h8y1svru7xq8" path="res://Scenes/floor.tscn" id="3_jgorv"]
+[ext_resource type="PackedScene" uid="uid://crya0wdu088mk" path="res://Scenes/step.tscn" id="4_q1ws5"]
+[ext_resource type="PackedScene" uid="uid://cbny3q11cpmub" path="res://Scenes/platform.tscn" id="5_yji5v"]
+[ext_resource type="PackedScene" uid="uid://byhr4rl738ra7" path="res://Scenes/step_mas_grande.tscn" id="6_ulvkb"]
+[ext_resource type="PackedScene" uid="uid://nou7hcxyfdqf" path="res://Scenes/floor_mediano.tscn" id="7_fh0sh"]
+[ext_resource type="PackedScene" uid="uid://doh1052hwmlfi" path="res://Scenes/floor_chico.tscn" id="8_03od6"]
+[ext_resource type="PackedScene" uid="uid://eos000wk5eet" path="res://Scenes/floor_pequeño.tscn" id="9_384de"]
+[ext_resource type="PackedScene" uid="uid://dhk2emihqbksm" path="res://Scenes/Enemy.tscn" id="10_bhaf5"]
+[ext_resource type="PackedScene" uid="uid://xoehnqgg1hql" path="res://Scenes/hueso.tscn" id="11_o0dvq"]
+[ext_resource type="PackedScene" uid="uid://x2ba0chgykd6" path="res://Scenes/parte_de_abajo.tscn" id="12_1nrjw"]
+[ext_resource type="PackedScene" uid="uid://bpmj1jri1bmbh" path="res://Scenes/parte_del_medio.tscn" id="13_bqkvc"]
+[ext_resource type="PackedScene" uid="uid://c04f0mpkpoaye" path="res://Scenes/parte_de_arriba.tscn" id="14_iswit"]
+[ext_resource type="PackedScene" uid="uid://8stons7vwfer" path="res://Scenes/parte_entre_medio.tscn" id="15_ud1sj"]
+[ext_resource type="PackedScene" uid="uid://dx82emru2327h" path="res://Scenes/wall.tscn" id="16_qvja8"]
+[ext_resource type="Script" uid="uid://bshk7y3h22f0s" path="res://Scenes/level_end.gd" id="17_0wsr5"]
+[ext_resource type="PackedScene" uid="uid://br161s54a1xg1" path="res://Scenes/puerta.tscn" id="18_jgorv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wsr5"]
+texture = ExtResource("1_ug0sv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+27:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+27:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+27:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+26:5/0 = 0
+27:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+1

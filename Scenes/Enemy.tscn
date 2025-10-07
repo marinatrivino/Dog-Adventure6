@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wovta"]
-size = Vector2(57, 42)
+size = Vector2(59, 42)
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_s7bn3")

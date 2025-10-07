@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://5x4043wc0dcf" path="res://Assets/FONDO TIERRA SOLO.jpg" id="1_c46xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_baf4g"]
-size = Vector2(593, 80)
+size = Vector2(592, 80)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uourm"]
 texture = ExtResource("1_c46xa")
@@ -122,7 +122,7 @@ sources/0 = SubResource("TileSetAtlasSource_uourm")
 [node name="floorPequeño" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(359.5, 56)
+position = Vector2(360, 56)
 shape = SubResource("RectangleShape2D_baf4g")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

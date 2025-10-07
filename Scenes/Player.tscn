@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7pv13sk6mrp7"]
+[gd_scene load_steps=10 format=3 uid="uid://c7pv13sk6mrp7"]
 
 [ext_resource type="Script" uid="uid://c24tsb3vbjtsg" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bc7v8r1q2ea2p" path="res://Assets/PERRO DEFINITIVO.png" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://bo071x6sx45xb" path="res://Assets/PERRO SALTANDO RECORTADO.png" id="3_dewec"]
 [ext_resource type="Texture2D" uid="uid://ditwm1ud48ls1" path="res://Assets/PERRO INTENTANDO CAMINAR RECORTADO.png" id="4_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://c0aucwp0hsd4g" path="res://Assets/perro_caminando_prueba_1.png" id="5_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://d15ev3ddywug" path="res://Assets/perro_caminando_prueba_2-removebg-preview.png" id="6_52ee3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
 animations = [{
@@ -17,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xhfnw")
+"texture": ExtResource("4_5ixxa")
 }],
 "loop": true,
 "name": &"idle",
@@ -34,25 +36,45 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_5ixxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ixxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_52ee3")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_nn08x"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52ee3"]
+_data = {
+&"idle": SubResource("Animation_nn08x")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(14, -16)
+position = Vector2(1, -16)
 rotation = -0.00623672
-scale = Vector2(0.108968, 0.110352)
+scale = Vector2(0.10648, 0.110686)
 sprite_frames = SubResource("SpriteFrames_kpjcp")
 animation = &"walk"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-2.86102e-06, 0)
-polygon = PackedVector2Array(-12, -11, 1, -4, 8, -2, 9, 7, 10, 17, 12, 25, 14, 27, 17, 27, 21, 27, 23, 26, 24, 23, 24, 23, 25, 26, 31, 24, 36, 24, 42, 24, 43, 22, 42, 19, 38, 18, 36, 16, 35, 12, 35, 0, 38, -11, 39, -16, 41, -18, 43, -22, 47, -25, 50, -29, 53, -32, 54, -34, 56, -36, 57, -42, 50, -47, 50, -55, 52, -55, 54, -59, 52, -66, 41, -68, 41, -69, 37, -65, 29, -65, 27, -68, 12, -65, 12, -63, 13, -59, 17, -55, 16, -46, 10, -35, -12, -33, -26, -33, -30, -34, -34, -37, -36, -41, -37, -45, -37, -49, -36, -53, -35, -57, -38, -58, -41, -55, -44, -53, -46, -46, -44, -41, -42, -37, -37, -32, -33, -30, -36, -24, -38, -11, -38, -4, -42, 2, -43, 8, -44, 18, -43, 21, -41, 22, -34, 22, -32, 21, -34, 18, -37, 16, -22, 15, -22, 18, -18, 19, -14, 19, -13, 18, -13, 16, -16, 14, -19, 11, -20, 5, -16, 1, -12, -4)
+position = Vector2(-2, 0)
+scale = Vector2(0.734223, 0.703125)
+polygon = PackedVector2Array(-12.2579, 5.68889, -8.1719, 12.8, -4.08595, 24.1778, -4.08595, 17.0667, -1.36198, 24.1778, 2.72397, 25.6, 14, 27, 17, 27, 21, 27, 23, 26, 24, 23, 24, 23, 25, 26, 30.9616, 26.0326, 36.1472, 26.0326, 41.3329, 26.0326, 43, 22, 42, 19, 38, 18, 36, 16, 35, 12, 38.1356, 1.42222, 35.4116, -2.84444, 38.1356, -7.11111, 39.4975, -8.53333, 42.2215, -5.68889, 49.0314, -14.2222, 51.7554, -15.6444, 58.5653, -18.4889, 65.3752, -24.1778, 66.7372, -29.8667, 57, -42, 50, -47, 50, -55, 52, -55, 54, -59, 52, -66, 41, -68, 41, -69, 37, -65, 29, -65, 27, -68, 12, -65, 12, -63, 13, -59, 17, -55, 16, -46, 10, -35, -12, -33, -26, -33, -30, -34, -34, -37, -36, -41, -37, -45, -37, -49, -36, -53, -35, -57, -38, -58, -41, -55, -44, -53, -46, -46, -44, -41, -42, -37, -37, -32, -33, -30, -36, -24, -38, -11, -38, -4, -42, 2, -43, 8, -44, 18, -44.9455, 19.9111, -42.2215, 24.1778, -35.4116, 24.1778, -39.4975, 25.6, -29.9636, 22.7556, -32.6876, 24.1778, -23.1537, 22.7556, -22, 18, -19.0678, 24.1778, -13.6198, 24.1778, -8.1719, 24.1778, -13, 16, -16, 14, -19, 11, -20, 5, -9.53389, 12.8, -13.6198, 5.68889)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(8.99971, -58.0001)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_52ee3")
+}

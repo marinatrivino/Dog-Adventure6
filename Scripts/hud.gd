@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 var bones: int = 0
-var lives: int = 3
 var full_heart = preload("res://Assets/corazon lleno.png")
 var empty_heart = preload("res://Assets/corazon vacio.png")
 
@@ -18,6 +17,7 @@ func _ready():
 		if not gm.player_died.is_connected(c):
 			gm.player_died.connect(c)
 		update_hearts(gm.lives)
+		pintar_corazones()
 	else:
 		push_error("GameManager no encontrado en /root/GameManager. ¿Lo agregaste como Autoload?")
 	
@@ -26,7 +26,7 @@ func _ready():
 
 func update_hud():
 	$BonesLabel.text = "Bones: " + str(bones)
-	update_hearts(lives)
+	update_hearts(GameManager.lives)
 
 func update_hearts(current_lives: int):
 	for i in range(hearts.size()):
@@ -35,6 +35,12 @@ func update_hearts(current_lives: int):
 		else:
 			hearts[i].texture = empty_heart
 
+func pintar_corazones():
+	for i in range(hearts.size()):
+		hearts[i].texture = full_heart
+		print(i)
+
 func _on_player_died(lives_left: int) -> void:
-	lives = lives_left
-	update_hearts(lives)
+	#lives = lives_left
+	update_hearts(GameManager.lives)
+	

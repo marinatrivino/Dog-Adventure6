@@ -32,6 +32,11 @@ func game_over():
 	# Esperamos un frame antes de cambiar de escena
 	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	lives = 3
+	
+	
+	HUD.update_hearts(lives)
+	
 
 func go_to_next_level():
 	# Primero verificamos si es el último nivel

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var jump_strategy: JumpStrategy
+
 @export var speed := 200
 @export var jump_force := -480
 var gravity := 980
@@ -13,14 +15,20 @@ var invulnerable := false
 
 func _ready():
 	respawn_position = global_position
+	set_jump_strategy(DoubleJump.new())  # Podés cambiar a SingleJump.new()
+
+func set_jump_strategy(strategy: JumpStrategy) -> void:
+	jump_strategy = strategy
+	jump_strategy.reset(self)
 
 func _physics_process(delta):
 	if GameManager.lives <= 0:
-		set_physics_process(false)  # Detenemos la física
+		set_physics_process(false)
 		if has_node("CollisionShape2D"):
 			$CollisionShape2D.disabled = true
 		return
 
+	# Movimiento horizontal
 	velocity.x = 0
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += speed
@@ -29,20 +37,24 @@ func _physics_process(delta):
 		velocity.x -= speed
 		animated_sprite.flip_h = true
 
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	else:
-		velocity.y = 0
+	# Gravedad
+	velocity.y += gravity * delta
 
-	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		velocity.y = jump_force
+	# Salto
+	if Input.is_action_just_pressed("ui_accept") and jump_strategy:
+		jump_strategy.jump(self)
+
+	# Mover player
+	move_and_slide()
+
+	# Reset de estrategia si toca piso
+	if jump_strategy:
+		jump_strategy.reset(self)
 
 	# Muerte por caída
 	if global_position.y > death_y and not invulnerable:
 		GameManager.lose_life()
-		return  # IMPORTANTE: salir antes de move_and_slide()
-
-	move_and_slide()
+		return
 
 	# Animaciones
 	if not is_on_floor():
@@ -51,6 +63,10 @@ func _physics_process(delta):
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
+
+func reset_jump_strategy():
+	if jump_strategy:
+		jump_strategy.reset(self)
 
 func add_bone():
 	bones += 1
